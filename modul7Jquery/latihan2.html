@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jam Digital jQuery</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      text-align: center;
+      padding: 60px;
+      background: #ff8de6;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+    }
+
+    #clock {
+      font-size: 60px;
+      font-weight: bold;
+      color: #ffffff;
+      background: #5a65ff;
+      display: inline-block;
+      padding: 20px 50px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(160, 41, 41, 0.1);
+      letter-spacing: 3px;
+      
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 28px;
+      font-size: 16px;
+      border: none;
+      background-color: #07ce14;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #40ff19;
+      color: #4f93ff;
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <h2>Jam Digital CUY</h2>
+
+  <div id="clock">00:00:00</div><br>
+  <button id="toggle">START</button>
+
+  <script>
+    $(document).ready(function() {
+      let timer = null;
+      let running = false;
+
+      function addZero(num) {
+        return num < 10 ? "0" + num : num;
+      }
+
+      function updateClock() {
+        const now = new Date();
+        const h = addZero(now.getHours());
+        const m = addZero(now.getMinutes());
+        const s = addZero(now.getSeconds());
+        $("#clock").text(`${h}:${m}:${s}`);
+      }
+
+      $("#toggle").click(function() {
+        if (!running) {
+          timer = setInterval(updateClock, 1000);
+          updateClock();
+          $(this).text("STOP");
+          running = true;
+        } else {
+          clearInterval(timer);
+          $(this).text("START");
+          running = false;
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
