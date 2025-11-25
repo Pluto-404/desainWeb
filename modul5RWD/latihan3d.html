@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animasi Transisi CSS3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .box{
+            width: 40%;
+            height: 100px;
+            background: orange;
+            border: 2px solid #212121;
+
+            transition: all 1s ease-in-out; /* Transisi halus ke semua properti */
+        }
+
+        /* Landscape */
+        @media (orientation: landscape){
+            .box{
+                width: 100%;
+                height: 150px;
+                background: blue;
+                border-radius: 50%; /* Bentuk oval */
+                animation: putar 2s linear infinite; /* Rotasi 360 derajat */
+            }
+        }
+
+        /* Keyframes untuk rotasi */
+        @keyframes putar {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Transisi CSS3</h3>
+
+    <div class="box"></div>
+    <p>
+        Ubah orientasi ke landscape/potrait dan sebaliknya untuk melihat efek Transisi & Animasi.
+    </p>
+</body>
+</html>

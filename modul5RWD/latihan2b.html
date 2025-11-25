@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Desain Responsif dengan Flexbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style type="text/css">
+        *{
+            box-sizing: border-box;
+        }
+
+        #wrapper{
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        #header, #footer{
+            padding: 20px;
+            height: 150px;
+            border: 2px solid red;
+        }
+
+        #nav{
+            padding: 20px;
+            border: 2px solid red;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2%;
+            justify-content: space-between;
+        }
+
+        .box{
+            flex: 1 1 calc(25% - 2%); /* 4 kolom */
+            min-width: 22%;
+            height: 120px;
+            background: red;
+            border: 2px solid red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Tablet */
+        @media only screen and (max-width: 1080px){
+            .box{
+                flex: 1 1 calc(45% - 2%); /* 2 kolom */
+                min-width: 45%;
+            }
+        }
+
+        /* Smartphone */
+        @media only screen and (max-width: 640px){
+            .box{
+                flex: 1 1 100%; /* 1 kolom */
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+        <div id="header">
+            <h2>Header</h2>
+        </div>
+
+        <div id="nav">
+            <h2 style="width: 100%;">Services</h2>
+            <div class="box">BOX 1</div>
+            <div class="box">BOX 2</div>
+            <div class="box">BOX 3</div>
+            <div class="box">BOX 4</div>
+        </div>
+
+        <div id="footer">
+            <h2>Footer</h2>
+        </div>
+    </div>
+</body>
+</html>
