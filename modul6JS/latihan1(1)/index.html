@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Sederhana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<div class="container">
+  <h2>Kalkulator Sederhana</h2>
+
+  <input type="number" id="num1" placeholder="Angka pertama">
+  
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">−</option>
+    <option value="*">×</option>
+    <option value="/">÷</option>
+  </select>
+
+  <input type="number" id="num2" placeholder="Angka kedua">
+
+  <button onclick="calculate()">Hitung</button>
+
+  <h3>Hasil: <span id="result">0</span></h3>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
